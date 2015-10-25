@@ -1,5 +1,5 @@
 
-#define DEBUG false
+#define DEBUG true
 
 enableSaving [false, false];
 
