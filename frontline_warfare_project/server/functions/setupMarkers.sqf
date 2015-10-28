@@ -45,6 +45,14 @@ for "_i" from 1 to 20 do
    
 };	
 
+{
+   missionNamespace setVariable [_x, -100, true]; //opfor
+} forEach ["score_zone1", "score_zone2", "score_zone3", "score_zone4", "score_zone5", "score_zone6", "score_zone8", "score_zone16", "score_zone17", "score_zone20","score_zone_OPBASE"];
+
+{
+   missionNamespace setVariable [_x, 100, true]; //blufor
+} forEach ["score_zone7", "score_zone9", "score_zone10", "score_zone11", "score_zone12", "score_zone13", "score_zone14", "score_zone15", "score_zone18", "score_zone19","score_zone_BLUBASE"];
+
 //Setting up initial marker colors for all zones
 _zoneMarkersArray = "";
 _markSide = "";

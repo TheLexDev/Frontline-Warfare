@@ -59,7 +59,7 @@ while {true} do
 	{
 	    if (count _playersArray > 0) then
 		{
-		  missionNamespace setVariable ["check_work", true, true];
+		  
 		  //in case with non empty array
 		  //in case there are no players in all zones
 		  //
@@ -104,8 +104,39 @@ while {true} do
 					};
 					
 				*/
+			_score = missionNamespace getVariable [format ["score_zone%1", _i], 0];
+			_currentZone = format ["zone%1", _i];
+			_isCapturing = missionNamespace getVariable [format ["isCapturing_zone%1", _i], false];
 			missionNamespace setVariable [format ["winSide_zone%1", _i], _winSide, true];
-			missionNamespace setVariable [format ["isCapturing_zone%1", _i], true, true];
+			
+			switch (_winSide) do
+ 			{
+			      case "blufor": {
+                     				  if (_score < 100) then 
+				                        {
+											if !(_isCapturing) then {
+											     missionNamespace setVariable [format ["isCapturing_zone%1", _i], true, true];
+											     [_currentZone, _i] spawn captureProcess;
+											};
+											
+										};
+				  
+				                 };
+				  case "opfor":  {
+                                       if (_score > -100) then
+									     {
+										     if !(_isCapturing) then {
+											     missionNamespace setVariable [format ["isCapturing_zone%1", _i], true, true];
+											     [_currentZone, _i] spawn captureProcess;
+												 };
+										 };
+                                 };
+                  case "neutral": {
+                                       missionNamespace setVariable [format ["isCapturing_zone%1", _i], false, true];
+                                  };				  
+			};
+			
+			
 			     
 			} else
 			{
