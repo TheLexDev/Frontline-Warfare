@@ -1,4 +1,5 @@
-//author: Lex
+//main init
+
 #define DEBUG false
 
 enableSaving [false, false];

@@ -5,12 +5,16 @@ class Mission
 	{
 		"a3_map_altis",
 		"A3_Characters_F_BLUFOR",
-		"a3_characters_f"
+		"a3_characters_f",
+		"A3_Soft_F_MRAP_02",
+		"A3_Characters_F_OPFOR"
 	};
 	addOnsAuto[]=
 	{
-		"A3_Characters_F_BLUFOR",
+		"A3_Characters_F_OPFOR",
 		"a3_characters_f",
+		"A3_Characters_F_BLUFOR",
+		"A3_Soft_F_MRAP_02",
 		"a3_map_altis"
 	};
 	randomSeed=10493341;
@@ -34,8 +38,26 @@ class Mission
 	};
 	class Groups
 	{
-		items=1;
+		items=2;
 		class Item0
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={7009.4067,116.78736,16463.355};
+					id=0;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item1
 		{
 			side="WEST";
 			class Vehicles
@@ -43,16 +65,27 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={9134,117.88229,15792.852};
-					azimut=58.538002;
-					id=0;
+					position[]={7207.8423,108.36617,16384.014};
+					id=1;
 					side="WEST";
 					vehicle="B_Soldier_F";
-					player="PLAYER COMMANDER";
+					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 				};
 			};
+		};
+	};
+	class Vehicles
+	{
+		items=1;
+		class Item0
+		{
+			position[]={7223.0732,108.32193,16371.675};
+			id=2;
+			side="EMPTY";
+			vehicle="O_MRAP_02_F";
+			skill=0.60000002;
 		};
 	};
 	class Markers

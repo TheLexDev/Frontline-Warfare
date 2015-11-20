@@ -49,7 +49,7 @@ while {true} do
 	   
 	   };
 	   
-	} forEach allPlayers; //"allPlayers" just for testing in editor. Don't forget to change it with playableUnits!
+	} forEach playableUnits; //"allPlayers" just for testing in editor. Don't forget to change it with playableUnits!
 	
 	_currentZoneArray = "";
 	

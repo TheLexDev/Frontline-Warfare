@@ -37,6 +37,13 @@ mf_compile = compileFinal
 	};
 ');
 
+_serverFunc = "server\functions";
+//functions
+
+fn_zoneUpdate = [_serverFunc, "zoneUpdate.sqf"] call mf_compile;
+
+
+
 ///////Capture Process
 
 captureProcess = {
@@ -54,22 +61,35 @@ while {_isCapturing} do {
 			   {
 			        case "blufor": {
 					                    if (_score < 100) then {
-										          _score = _score + 1;
+										     if ((_score + 1) == 0) then {
+											      _score = _score + 2;
+											 } else {
+       											 _score = _score + 1;
+												 };
 												  missionNamespace setVariable [format ["score_zone%1", _id], _score, true];
+												  [_id, _score] call fn_zoneUpdate;
+												  
 										};
 								   };
 			        case "opfor":  {
 					                    if (_score > -100) then {
-										          _score = _score - 1;
+										        if ((_score - 1) == 0) then {  
+												  _score = _score - 2;
+												  } else {
+												      _score = _score - 1;
+												  };
 												  missionNamespace setVariable [format ["score_zone%1", _id], _score, true];
+												  [_id, _score] call fn_zoneUpdate;
 										};
 								   };
 					case "neutral": {missionNamespace setVariable [format ["isCapturing_zone%1", _id], false, true]};			   
 			   };
 			   
+	
+	
 	//sleep capturing interval
-	("mt_zone" + str _id) setMarkerText (format ["zone%1 %2/100", _id, abs (_score)]);
-	sleep 5;
+	
+	sleep 1;
     _isCapturing = missionNamespace getVariable [format ["isCapturing_zone%1", _id], false];	
 };   
 
