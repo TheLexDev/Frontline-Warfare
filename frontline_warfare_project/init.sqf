@@ -13,5 +13,22 @@ if (isServer) then {
 	 
 };
 if !(isDedicated) then {
-     [] execVM "client\init.sqf";
+    [] spawn
+       {    
+            if (hasInterface) then {
+	             
+				 waitUntil {!isNull player};
+				 
+				 player setVariable ["playerSpawning", true, true];
+				 playerSpawning = true;
+				 
+				 removeAllWeapons player;
+				 
+				 client_initEH = player addEventHandler ["Respawn", {removeAllWeapons (_this select 0) }];
+				 
+				 [player] joinSilent createGroup playerSide;
+				 
+				 [] execVM "client\init.sqf";
+		    };
+		};	
 };

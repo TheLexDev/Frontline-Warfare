@@ -29,6 +29,11 @@ author="Lex"; // it would be if you could keep "A3Wasteland.com" in the name, li
 //overviewPicture = "mapConfig\Loading.jpg";
 //loadScreen = "mapConfig\Loading.jpg";
 
+#include "client\systems\common.hpp"
+#include "client\systems\adminMenu\dialog\adminMenu.hpp"
+
+
+
 //Dialog includes
 /*
 #include "client\gui_base.hpp"

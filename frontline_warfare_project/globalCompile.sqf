@@ -38,9 +38,11 @@ mf_compile = compileFinal
 ');
 
 _serverFunc = "server\functions";
+_clientFunc = "client\functions";
 //functions
 
 fn_zoneUpdate = [_serverFunc, "zoneUpdate.sqf"] call mf_compile;
+
 
 
 
