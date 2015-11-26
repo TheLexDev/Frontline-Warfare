@@ -232,7 +232,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=169;
+		items=170;
 		class Item0
 		{
 			position[]={5077.5112,50.972977,11250.148};
@@ -404,7 +404,7 @@ class Mission
 		class Item14
 		{
 			position[]={14343.249,21.049194,16181.498};
-			name="BLUBASE";
+			name="zone22";
 			text="Blufor Base";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -416,7 +416,7 @@ class Mission
 		class Item15
 		{
 			position[]={3644.3391,10.19119,13121.152};
-			name="OPBASE";
+			name="zone21";
 			text="Opfor Base";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -2248,6 +2248,12 @@ class Mission
 			name="respawn_east";
 			type="Empty";
 			colorName="ColorEAST";
+		};
+		class Item169
+		{
+			position[]={3642.8635,13.723165,10255.068};
+			name="Spawn_mark1";
+			type="Empty";
 		};
 	};
 };

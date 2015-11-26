@@ -55,7 +55,7 @@ while {true} do
 	
 	
 	
-	for "_i" from 1 to 20 do
+	for "_i" from 1 to 22 do
 	{
 	    if (count _playersArray > 0) then
 		{

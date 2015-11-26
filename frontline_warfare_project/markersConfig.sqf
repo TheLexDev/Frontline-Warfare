@@ -2,9 +2,9 @@
 
 zone1 = compileFinal str 
 [
-  ["zm1_1", "opbase"],
-  ["zm1_2", "opbase"],
-  ["zm1_3", "opbase"],
+  ["zm1_1", 21],
+  ["zm1_2", 21],
+  ["zm1_3", 21],
   ["zm1_4", 2],
   ["zm1_5", 16],
   ["zm1_6", 16],
@@ -21,7 +21,7 @@ zone2 = compileFinal str
   ["zm2_3", 17],
   ["zm2_4", 17],
   ["zm2_5", 1],
-  ["zm2_6", "opbase"]
+  ["zm2_6", 21]
 ];
 
 zone3 = compileFinal str
@@ -105,7 +105,7 @@ zone10 = compileFinal str
   ["zm10_2", 11],
   ["zm10_3", 11],
   ["zm10_4", 11],
-  ["zm10_5", "blubase"]
+  ["zm10_5", 22]
 ];
 
 zone11 = compileFinal str
@@ -118,7 +118,7 @@ zone11 = compileFinal str
   ["zm11_6", 7],
   ["zm11_7", 13],
   ["zm11_8", 19],
-  ["zm11_9", "blubase"]
+  ["zm11_9", 22]
 ];
 
 zone12 = compileFinal str
@@ -156,8 +156,8 @@ zone14 = compileFinal str
 
 zone15 = compileFinal str
 [
-  ["zm15_1", "blubase"],
-  ["zm15_2", "blubase"],
+  ["zm15_1", 22],
+  ["zm15_2", 22],
   ["zm15_3", "any"],
   ["zm15_4", 14],
   ["zm15_5", 14],
@@ -212,10 +212,10 @@ zone19 = compileFinal str
 zone20 = compileFinal str
 [
   ["zm20_1", 2],
-  ["zm20_1", 2]
+  ["zm20_2", 2]
 ];
 
-OPBASE = compileFinal str
+zone21 = compileFinal str
 [
   ["zm_opb_1", 2],
   ["zm_opb_2", 1],
@@ -223,7 +223,7 @@ OPBASE = compileFinal str
   ["zm_opb_4", 1]
 ];
 
-BLUBASE = compileFinal str
+zone22 = compileFinal str
 [
   ["zm_blb_1", 10],
   ["zm_blb_2", 11],
@@ -254,5 +254,33 @@ allZoneMarkers = compileFinal str
   "zone17",
   "zone18",
   "zone19",
-  "zone20"
-];  
+  "zone20",
+  "zone21",
+  "zone22"
+];
+
+nameZoneArray = compileFinal str
+[
+	[1, "Factory"],
+	[2, "Panochori"],
+	[3, "Zaros"],
+	[4, "Negades"],
+	[5, "Kore"],
+	[6, "Syrta"],
+	[7, "Agios Dionysios"],
+	[8, "Therisa"],
+	[9, "Poliakko"],
+	[10, "Neochori"],
+	[11, "Lakka"],
+	[12, "Galati"],
+	[13, "Orino"],
+	[14, "Athira"],
+	[15, "Gravia"],
+	[16, "Agia Stemma"],
+	[17, "Edessa"],
+	[18, "Ifestiona"],
+	[19, "Koroni"],
+	[20, "Athanos"],
+	[21, "OPFOR BASE"],
+	[22, "BLUFOR BASE"]
+];	

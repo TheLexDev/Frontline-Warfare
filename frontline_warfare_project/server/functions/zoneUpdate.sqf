@@ -33,8 +33,8 @@ _ownerUpdate = {
 				  case 18: {_zoneMarkersArray = call zone18;};
 				  case 19: {_zoneMarkersArray = call zone19;};
 				  case 20: {_zoneMarkersArray = call zone20;};
-				  case "opbase": {_zoneMarkersArray = call OPBASE;};
-				  case "blubase": {_zoneMarkersArray = call BLUBASE;};
+				  case 21: {_zoneMarkersArray = call zone21;};
+				  case 22: {_zoneMarkersArray = call zone22;};
 		
 		};
 	
@@ -60,8 +60,7 @@ _ownerUpdate = {
 	{
 	    _element = _x;
 		switch (_element) do {		
-		   case "opbase": {_zoneSide = missionNamespace getVariable ["FL_OPBASE", "any"];};
-		   case "blubase": {_zoneSide = missionNamespace getVariable ["FL_BLUBASE", "any"];};
+		   
 		   default {_zoneSide = missionNamespace getVariable ["FL_Zone" + str _element, "any"];};
 		 };  
 		
@@ -87,8 +86,8 @@ _ownerUpdate = {
 				  case 18: {_zoneMarkersArray = call zone18;};
 				  case 19: {_zoneMarkersArray = call zone19;};
 				  case 20: {_zoneMarkersArray = call zone20;};
-				  case "opbase": {_zoneMarkersArray = call OPBASE;};
-				  case "blubase": {_zoneMarkersArray = call BLUBASE;};
+				  case 21: {_zoneMarkersArray = call zone21;};
+				  case 22: {_zoneMarkersArray = call zone22;};
 		
 		          };
 		           
@@ -139,7 +138,7 @@ _score = _this select 1;
 
 _owner = missionNamespace getVariable [_zone, ""];
 
-("mt_zone" + str _id) setMarkerText (format ["zone%1 %2/100", _id, abs (_score)]);
+[_id, _score] call fn_updateTextMarker;
 
 switch (true) do {
 
@@ -149,7 +148,8 @@ switch (true) do {
 											 _owner = "BLUFOR";
 											 missionNamespace setVariable [_zone, _owner, true];
 											 [_id, _owner] call _ownerUpdate;
-							   };
+											 flag20 setFlagTexture "\A3\Data_F\Flags\Flag_us_CO.paa";
+											 };
 	  };
 	  
 	  case (_score < 0): {
@@ -158,6 +158,7 @@ switch (true) do {
 											 _owner = "OPFOR";
 											 missionNamespace setVariable [_zone, _owner, true];
 											 [_id, _owner] call _ownerUpdate;
+											 flag20 setFlagTexture "\A3\Data_F\Flags\Flag_CSAT_CO.paa";
 							   };
 	  };
 

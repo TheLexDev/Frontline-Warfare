@@ -1,6 +1,6 @@
 
 //Setting up vars for opfor markers
-private ["_zoneMarkersArray", "_zoneSide", "_mark", "_anotherZone","_anotherZoneSide", "_zoneArray", "_zone", "_zoneColor", "_markScore"];
+private ["_zoneMarkersArray", "_zoneSide", "_mark", "_anotherZone","_anotherZoneSide", "_zoneArray", "_zone", "_zoneColor", "_markScore", "_zoneName", "_zoneNameArray"];
 {
     missionNamespace setVariable [_x, "OPFOR", true];
 } forEach
@@ -10,12 +10,12 @@ private ["_zoneMarkersArray", "_zoneSide", "_mark", "_anotherZone","_anotherZone
 	  "FL_Zone3",
 	  "FL_Zone4",
 	  "FL_Zone5",
-	  "FL_Zone6",
+	  "FL_Zone6",     //zone's owner vars
 	  "FL_Zone8",
 	  "FL_Zone16",
 	  "FL_Zone17",
 	  "FL_Zone20",
-	  "FL_OPBASE"
+	  "FL_Zone21" //opfor base
     ];
 
 //Setting up vars for blufor markers	
@@ -28,15 +28,15 @@ private ["_zoneMarkersArray", "_zoneSide", "_mark", "_anotherZone","_anotherZone
 	  "FL_Zone10",
 	  "FL_Zone11",
 	  "FL_Zone12",
-	  "FL_Zone13",
+	  "FL_Zone13",   //zone's owner vars
 	  "FL_Zone14",
 	  "FL_Zone15",
 	  "FL_Zone18",
 	  "FL_Zone19",
-	  "FL_BLUBASE"
+	  "FL_Zone22"  //blufor base
     ];
 
-for "_i" from 1 to 20 do
+for "_i" from 1 to 22 do
 {
    
    missionNamespace setVariable [format ["score_zone%1", _i], 100, true];
@@ -47,18 +47,18 @@ for "_i" from 1 to 20 do
 
 {
    missionNamespace setVariable [_x, -100, true]; //opfor
-} forEach ["score_zone1", "score_zone2", "score_zone3", "score_zone4", "score_zone5", "score_zone6", "score_zone8", "score_zone16", "score_zone17", "score_zone20","score_zone_OPBASE"];
+} forEach ["score_zone1", "score_zone2", "score_zone3", "score_zone4", "score_zone5", "score_zone6", "score_zone8", "score_zone16", "score_zone17", "score_zone20","score_zone21"];
 
 {
    missionNamespace setVariable [_x, 100, true]; //blufor
-} forEach ["score_zone7", "score_zone9", "score_zone10", "score_zone11", "score_zone12", "score_zone13", "score_zone14", "score_zone15", "score_zone18", "score_zone19","score_zone_BLUBASE"];
+} forEach ["score_zone7", "score_zone9", "score_zone10", "score_zone11", "score_zone12", "score_zone13", "score_zone14", "score_zone15", "score_zone18", "score_zone19","score_zone22"];
 
 //Setting up initial marker colors for all zones
 _zoneMarkersArray = "";
 _markSide = "";
 
 sleep 2;  
-  for "_i" from 1 to 20 do {
+  for "_i" from 1 to 22 do {
   
         _zoneSide = missionNamespace getVariable ["FL_Zone" + str _i, "any"];
 		switch (_i) do {
@@ -82,6 +82,8 @@ sleep 2;
 				  case 18: {_zoneMarkersArray = call zone18;};
 				  case 19: {_zoneMarkersArray = call zone19;};
 				  case 20: {_zoneMarkersArray = call zone20;};
+				  case 21: {_zoneMarkersArray = call zone21;}; //opbase
+				  case 22: {_zoneMarkersArray = call zone22;}; //blubase
 		
 		};
 		
@@ -93,8 +95,6 @@ sleep 2;
 		   switch (_anotherZone) do {
 		           
 				   case "any": {_anotherZoneSide = "any";};
-				   case "opbase": {_anotherZoneSide = "OPFOR";};
-				   case "blubase": {_anotherZoneSide = "BLUFOR";};
 				   default {_anotherZoneSide = missionNamespace getVariable ["FL_Zone" + str _anotherZone, "any"];};
 		   
 		   };
@@ -118,9 +118,10 @@ sleep 2;
 _zoneArray = call allZoneMarkers;
 _zoneSide = "";
 _zone = "";
+_zoneName = "";
+_zoneNameArray = call nameZoneArray;
 
-
-for "_i" from 1 to 20 do {
+for "_i" from 1 to 22 do {
       
 	_zoneSide = missionNamespace getVariable ["FL_Zone" + str _i,""];
 	_zone = "zone" + str _i;
@@ -128,14 +129,21 @@ for "_i" from 1 to 20 do {
 	if (_zoneSide == "OPFOR") then {_zoneColor = "ColorRed"};
     if (_zoneSide == "BLUFOR") then {_zoneColor = "ColorBlue";};
     if (_zoneSide == "") then {_zoneColor = "ColorWhite";};
-    _zone setMarkerColor _zoneColor;	
+    _zone setMarkerColor _zoneColor;
+
+	{
+		if (_i == (_x select 0)) then
+			{
+				_zoneName = _x select 1;
+			};	
+	} forEach _zoneNameArray;
 	
 	//Score Marker
 	_markScore = createMarker ["mt_zone" + str _i,[((getMarkerPos _zone) select 0) + 100, ((getMarkerPos _zone) select 1) + 80, 0]];
 	_markScore setMarkerColor _zoneColor;
 	_markScore setMarkerShape "ICON";
 	_markScore setMarkerType "mil_dot";
-	_markScore setMarkerText (_zone + " 100/100");
+	_markScore setMarkerText (_zoneName + " 100/100");
 
 
 }; 
