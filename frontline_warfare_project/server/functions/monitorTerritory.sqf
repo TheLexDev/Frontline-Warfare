@@ -1,3 +1,4 @@
+private "_isSurZone";
 //Functions
 
 //[zone, array]
@@ -67,7 +68,7 @@ while {true} do
 		  _currentZoneArray = [format ["zone%1", _i], _playersArray] call _selectCurrentZone;
 		  //
           //
-		  
+		 
 			if (count _currentZoneArray > 0) then
 			{
 			//in case there are some players in current zone
@@ -109,10 +110,13 @@ while {true} do
 			_isCapturing = missionNamespace getVariable [format ["isCapturing_zone%1", _i], false];
 			missionNamespace setVariable [format ["winSide_zone%1", _i], _winSide, true];
 			
+			_zoneSide = missionNamespace getVariable (format ["FL_Zone%1", _i]);
+			_zoneSide = toLower _zoneSide;
+			_isAbleCup = missionNamespace getVariable [format ["isAbleCap_zone%1", _i], false];
 			switch (_winSide) do
  			{
 			      case "blufor": {
-                     				  if (_score < 100) then 
+                     				  if ((_score < 100) && ((_zoneSide == _winSide) || (_isAbleCup))) then 
 				                        {
 											if !(_isCapturing) then {
 											     missionNamespace setVariable [format ["isCapturing_zone%1", _i], true, true];
@@ -123,7 +127,7 @@ while {true} do
 				  
 				                 };
 				  case "opfor":  {
-                                       if (_score > -100) then
+                                       if ((_score > -100) && ((_zoneSide == _winSide) || (_isAbleCup))) then
 									     {
 										     if !(_isCapturing) then {
 											     missionNamespace setVariable [format ["isCapturing_zone%1", _i], true, true];

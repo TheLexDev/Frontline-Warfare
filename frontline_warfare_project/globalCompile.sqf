@@ -43,7 +43,7 @@ _clientFunc = "client\functions";
 
 fn_zoneUpdate = [_serverFunc, "zoneUpdate.sqf"] call mf_compile;
 fn_updateTextMarker = [_serverFunc, "updateTextMarker.sqf"] call mf_compile;
-
+fn_checkZoneCapturingAbility = [_serverFunc, "checkZoneCapturingAbility.sqf"] call mf_compile;
 
 
 

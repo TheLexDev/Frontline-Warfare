@@ -53,6 +53,11 @@ for "_i" from 1 to 22 do
    missionNamespace setVariable [_x, 100, true]; //blufor
 } forEach ["score_zone7", "score_zone9", "score_zone10", "score_zone11", "score_zone12", "score_zone13", "score_zone14", "score_zone15", "score_zone18", "score_zone19","score_zone22"];
 
+for "_i" from 1 to 22 do
+{
+	missionNamespace setVariable [format ["isAbleCap_zone%1", _i], false, true];
+};	
+
 //Setting up initial marker colors for all zones
 _zoneMarkersArray = "";
 _markSide = "";
@@ -146,6 +151,6 @@ for "_i" from 1 to 22 do {
 	_markScore setMarkerText (_zoneName + " 100/100");
 
 
-}; 
+};
 
-	
+[] call fn_checkZoneCapturingAbility;
