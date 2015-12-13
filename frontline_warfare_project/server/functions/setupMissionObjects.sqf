@@ -27,7 +27,3 @@ _flagObjects = [];
 } forEach [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
 missionNamespace setVariable ["FL_flagObjects", _flagObjects, true];
-
-//flag20 = "FlagPole_F" createVehicle markerPos "Spawn_mark1";
-//flag20 setFlagTexture "\A3\Data_F\Flags\Flag_CSAT_CO.paa";
-//"\A3\Data_F\Flags\Flag_us_CO.paa"
