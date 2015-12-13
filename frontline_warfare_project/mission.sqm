@@ -232,10 +232,10 @@ class Mission
 	};
 	class Markers
 	{
-		items=170;
+		items=169;
 		class Item0
 		{
-			position[]={5077.5112,50.972977,11250.148};
+			position[]={5091.1499,49.727783,11270.6};
 			name="zone2";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -247,7 +247,7 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={9112.168,19.617311,11989.159};
+			position[]={9146,19.617311,12003.1};
 			name="zone3";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -259,7 +259,7 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={4926.6719,77.432961,16163.178};
+			position[]={4860.1899,77.432961,16151};
 			name="zone4";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -271,7 +271,7 @@ class Mission
 		};
 		class Item3
 		{
-			position[]={7118.021,114.25184,16449.902};
+			position[]={7128.5601,114.25184,16479.699};
 			name="zone5";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -283,7 +283,7 @@ class Mission
 		};
 		class Item4
 		{
-			position[]={8630.6436,180.77145,18282.086};
+			position[]={8643.1504,180.77145,18282.1};
 			name="zone6";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -295,7 +295,7 @@ class Mission
 		};
 		class Item5
 		{
-			position[]={9235.6084,121.27251,15838.58};
+			position[]={9224.6797,121.27251,15842};
 			name="zone7";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -307,7 +307,7 @@ class Mission
 		};
 		class Item6
 		{
-			position[]={10684.493,16.803606,12266.452};
+			position[]={10677.6,16.803606,12233.7};
 			name="zone8";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -319,7 +319,7 @@ class Mission
 		};
 		class Item7
 		{
-			position[]={10975.658,28.566877,13478.565};
+			position[]={10964.9,28.566877,13481.7};
 			name="zone9";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -331,7 +331,7 @@ class Mission
 		};
 		class Item8
 		{
-			position[]={12476.295,9.6186428,14321.345};
+			position[]={12476.9,9.6186428,14315.7};
 			name="zone10";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -343,7 +343,7 @@ class Mission
 		};
 		class Item9
 		{
-			position[]={12323.337,23.624363,15710.853};
+			position[]={12330.3,23.624363,15686.5};
 			name="zone11";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -355,7 +355,7 @@ class Mission
 		};
 		class Item10
 		{
-			position[]={10459.687,85.454552,17260.365};
+			position[]={10464.4,85.454552,17267.9};
 			name="zone13";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -367,7 +367,7 @@ class Mission
 		};
 		class Item11
 		{
-			position[]={10332.679,126.75616,19063.203};
+			position[]={10331.7,126.75616,19060.1};
 			name="zone12";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -379,7 +379,7 @@ class Mission
 		};
 		class Item12
 		{
-			position[]={14038.123,26.496469,18728.324};
+			position[]={14043.6,26.496469,18746.199};
 			name="zone14";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -391,7 +391,7 @@ class Mission
 		};
 		class Item13
 		{
-			position[]={14487.438,20.854008,17669.742};
+			position[]={14489.9,20.854008,17669.699};
 			name="zone15";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -427,7 +427,7 @@ class Mission
 		};
 		class Item16
 		{
-			position[]={7298.5234,172.84796,13971.767};
+			position[]={7292.3398,172.84796,13950.7};
 			name="zone16";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -439,7 +439,7 @@ class Mission
 		};
 		class Item17
 		{
-			position[]={5335.9609,20.76372,14515.317};
+			position[]={5332.4302,20.76372,14524};
 			name="zone1";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -571,7 +571,7 @@ class Mission
 		};
 		class Item28
 		{
-			position[]={7229.2021,4.0869007,11043.094};
+			position[]={7239.7002,4.0869007,11041.7};
 			name="zone17";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -1577,7 +1577,7 @@ class Mission
 		};
 		class Item112
 		{
-			position[]={12833.607,43.329086,19644.854};
+			position[]={12821.5,43.329086,19635.199};
 			name="zone18";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -1649,7 +1649,7 @@ class Mission
 		};
 		class Item118
 		{
-			position[]={11746.623,52.895523,18266.895};
+			position[]={11747.7,52.895523,18250.301};
 			name="zone19";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -2201,7 +2201,7 @@ class Mission
 		};
 		class Item164
 		{
-			position[]={3625.4146,13.856746,10244.168};
+			position[]={3644.1101,13.512891,10245.2};
 			name="zone20";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -2248,12 +2248,6 @@ class Mission
 			name="respawn_east";
 			type="Empty";
 			colorName="ColorEAST";
-		};
-		class Item169
-		{
-			position[]={3642.8635,13.723165,10255.068};
-			name="Spawn_mark1";
-			type="Empty";
 		};
 	};
 };

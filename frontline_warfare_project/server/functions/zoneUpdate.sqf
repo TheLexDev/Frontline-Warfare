@@ -149,7 +149,8 @@ switch (true) do {
 											 missionNamespace setVariable [_zone, _owner, true];
 											 [_id, _owner] call _ownerUpdate;
 											 [] call fn_checkZoneCapturingAbility;
-											 flag20 setFlagTexture "\A3\Data_F\Flags\Flag_us_CO.paa";
+											 _flag = (missionNamespace getVariable ["FL_flagObjects"]) select (_id - 1);
+											 _flag setFlagTexture "\A3\Data_F\Flags\Flag_us_CO.paa";
 											 };
 	  };
 	  
@@ -160,7 +161,8 @@ switch (true) do {
 											 missionNamespace setVariable [_zone, _owner, true];
 											 [_id, _owner] call _ownerUpdate;
 											 [] call fn_checkZoneCapturingAbility;
-											 flag20 setFlagTexture "\A3\Data_F\Flags\Flag_CSAT_CO.paa";
+											 _flag = (missionNamespace getVariable ["FL_flagObjects"]) select (_id - 1);
+											 _flag setFlagTexture "\A3\Data_F\Flags\Flag_CSAT_CO.paa";
 							   };
 	  };
 
